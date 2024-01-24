@@ -27,7 +27,7 @@ driver = webdriver.Chrome(service = service, options = options)
 
 df_titles = pd.DataFrame()
 
-for l in range(6):
+for l in range(5, 6):
     section_url = "https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=10{}".format(l)
     titles = []
     for k in range(1, pages[l]):
@@ -55,8 +55,9 @@ for l in range(6):
             print(f"working at section {l} page {k}")
             df_section_title = pd.DataFrame(titles, columns=["titles"])
             df_section_title["category"] = category[l]
-
-            df_section_title.to_csv("../datasets/data_{0}_{1}.csv".format(l, k), index = False)
+            print(df_section_title)
+            df_section_title.to_csv("../crawling_data/data_{0}_{1}.csv".format(l, k),
+                                    index = False, encoding = "utf-8")
 
             # df_titles = pd.concat([df_titles, df_section_title],
             #                       axis="rows", ignore_index=True)
