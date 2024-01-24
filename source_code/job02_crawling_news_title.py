@@ -23,17 +23,18 @@ options.add_argument("lang=ko_KR")
 
 service = ChromeService(executable_path = ChromeDriverManager().install())
 
+# 웹 페이지 객체를 생성
 driver = webdriver.Chrome(service = service, options = options)
 
 df_titles = pd.DataFrame()
 
-for l in range(3, 6):
+for l in range(1, 6):
     section_url = "https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=10{}".format(l)
     titles = []
     for k in range(1, pages[l]):
         url = section_url + "#&date=%2000:00:00&page={}".format(k)
         try:
-            driver.get(url)
+            driver.get(url) #
             time.sleep(0.5)  # 딜레이 함수
 
         except:
