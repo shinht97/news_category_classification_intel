@@ -5,7 +5,7 @@ import re  # python에서 정규식 표현식 관련 하여 사용 하기 위한
 import pandas as pd
 import datetime
 
-category = ["Politics", "Economics", " Social", "Culture", "World", "IT"]
+category = ["Politics", "Economics", "Social", "Culture", "World", "IT"]
 
 # url = "https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100#&date=%2000:00:00&page=1"
 
