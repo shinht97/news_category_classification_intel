@@ -62,7 +62,7 @@ print(df_titles.info())
 print(df_titles["category"].value_counts())
 
 df_titles.to_csv(
-    "../datasets/naver_headline_news_{}.csv".format(datetime.datetime.now().strftime("%Y%m%d")),
+    "../crawling_data/naver_headline_news_{}.csv".format(datetime.datetime.now().strftime("%Y%m%d")),
     # datetime.datetime.now() : 현재 시간(ns 단위)
     # strftime(%Y%m%d) : 지정 문자열로 시간을 표시, %Y : 년(20xx), %m : 월, %d : 일
     index = False

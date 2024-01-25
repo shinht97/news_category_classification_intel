@@ -56,10 +56,10 @@ for l in range(1, 6):
             print(f"working at section {l} page {k}")
             df_section_title = pd.DataFrame(titles, columns=["titles"])
             df_section_title["category"] = category[l]
-            print(df_section_title)
+            # print(df_section_title)
             df_section_title.to_csv("../crawling_data/data_{0}_{1}.csv".format(l, k),
                                     index = False, encoding = "utf-8")
-
+            titles = [] # 데이터 중복 방지를 위해 titles를 비움
             # df_titles = pd.concat([df_titles, df_section_title],
             #                       axis="rows", ignore_index=True)
 
